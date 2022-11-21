@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ListItem } from './list-item.component';
 import { BaseList } from './base-list';
-import {IPageInfo} from "../../../../src/virtual-scroller";
+import {IPageInfo}  from "../../../../projects/ngx-virtual-scroller/src/lib/ngx-virtual-scroller.component";
 //import { IPageInfo } from 'ngx-virtual-scroller';
 
 @Component({

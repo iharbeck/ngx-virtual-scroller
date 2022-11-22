@@ -1,6 +1,5 @@
 import {Component, Input} from '@angular/core';
 import { ListItem, ListItemComponent } from './list-item.component';
-//import { Chance } from 'chance';
 
 @Component({
   template: `

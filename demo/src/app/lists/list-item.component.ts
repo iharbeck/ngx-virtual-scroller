@@ -2,13 +2,13 @@ import { Component, Input, HostBinding } from '@angular/core';
 
 export interface ListItem {
 	id: string;
-    index: number;
-    name: string;
-    gender: string;
-    age: number;
-    email: string;
-    phone: string;
-    address: string;
+  index: number;
+  name: string;
+  gender: string;
+  age: number;
+  email: string;
+  phone: string;
+  address: string;
 	company: string;
 }
 

@@ -693,9 +693,10 @@ export class VirtualScrollerComponent implements OnInit, OnChanges, OnDestroy {
 
   protected debounce(func: Function, wait: number): Function {
     const throttled = this.throttleTrailing(func, wait);
+    const _this = this;
     const result = function () {
       throttled['cancel']();
-      throttled.apply(this, arguments);
+      throttled.apply(<any>_this, <any>arguments);
     };
     result['cancel'] = function () {
       throttled['cancel']();
@@ -885,7 +886,8 @@ export class VirtualScrollerComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   protected getScrollElement():  HTMLElement {
-    return this.parentScroll instanceof Window ? (document.scrollingElement || document.documentElement || document.body) : (this.parentScroll || this.element.nativeElement);
+    // NOTE: Angular 14 upgrade removed document.scrollingElement from window as Element does not expose all parameters of HTMLElement
+    return this.parentScroll instanceof Window ? (document.documentElement || document.body) : (this.parentScroll || this.element.nativeElement);
   }
 
   protected addScrollEventHandlers(): void {
@@ -893,7 +895,7 @@ export class VirtualScrollerComponent implements OnInit, OnChanges, OnDestroy {
       return;
     }
 
-    let scrollElement = this.getScrollElement();
+    const scrollElement = this.getScrollElement();
 
     this.removeScrollEventHandlers();
 

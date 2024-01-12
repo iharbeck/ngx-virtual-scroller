@@ -1,5 +1,5 @@
 {
-  "name": "@iharbeck/ngx-virtual-scroller",
+  "name": "@oshimura9408/ngx-virtual-scroller",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -20,7 +20,6 @@
     "prod-publish": "npm run build:all2 && npm publish --access=public ./dist/ngx-virtual-scroller",
     "publish-test": "npm pack ./dist"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^17.0.1",
     "@angular/common": "^17.0.1",

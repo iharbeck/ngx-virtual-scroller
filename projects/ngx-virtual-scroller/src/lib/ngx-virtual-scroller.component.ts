@@ -160,12 +160,7 @@ export interface IViewport extends IPageInfo {
         }
 
         .total-padding {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 1px;
             width: 1px;
-            transform-origin: 0 0;
             opacity: 0;
         }
 
@@ -680,7 +675,7 @@ export class VirtualScrollerComponent implements OnInit, OnChanges, OnDestroy {
     protected updateDirection(): void {
         if (this.horizontal) {
             this._childScrollDim = 'childWidth';
-            this._invisiblePaddingProperty = 'scaleX';
+            this._invisiblePaddingProperty = 'width';
             this._marginDir = 'margin-left';
             this._offsetType = 'offsetLeft';
             this._pageOffsetType = 'pageXOffset';
@@ -688,7 +683,7 @@ export class VirtualScrollerComponent implements OnInit, OnChanges, OnDestroy {
             this._translateDir = 'translateX';
         } else {
             this._childScrollDim = 'childHeight';
-            this._invisiblePaddingProperty = 'scaleY';
+            this._invisiblePaddingProperty = 'height';
             this._marginDir = 'margin-top';
             this._offsetType = 'offsetTop';
             this._pageOffsetType = 'pageYOffset';
@@ -807,9 +802,7 @@ export class VirtualScrollerComponent implements OnInit, OnChanges, OnDestroy {
                 this.previousViewPort = viewport;
 
                 if (scrollbarLengthChanged) {
-                    this.renderer.setStyle(this.invisiblePaddingElementRef.nativeElement, 'transform', `${this._invisiblePaddingProperty}(${viewport.scrollbarLength})`);
-                    this.renderer.setStyle(this.invisiblePaddingElementRef.nativeElement, 'webkitTransform', `${this._invisiblePaddingProperty}(${viewport.scrollbarLength})`);
-                }
+                    this.renderer.setStyle(this.invisiblePaddingElementRef.nativeElement, this._invisiblePaddingProperty, `${viewport.scrollLength}px`);                }
 
                 if (paddingChanged) {
                     if (this.useMarginInsteadOfTranslate) {

@@ -1355,6 +1355,3 @@ export class VirtualScrollerComponent implements OnInit, OnChanges, OnDestroy {
         };
     }
 }
-
-
-

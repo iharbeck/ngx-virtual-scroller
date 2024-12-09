@@ -1276,8 +1276,8 @@ export class VirtualScrollerComponent implements OnInit, OnChanges, OnDestroy {
                 }
             }
             
-            arrayStartIndex = i;
-            arrayEndIndex = j
+            arrayStartIndex = i * dimensions.itemsPerWrapGroup;
+            arrayEndIndex = j * dimensions.itemsPerWrapGroup;
         } else {
             scrollPercentage = scrollPosition / dimensions.scrollLength;
 

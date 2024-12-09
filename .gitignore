@@ -7,3 +7,6 @@ node_modules/
 /src/**/*.js
 ngx-virtual-scroller-*.tgz
 !docs/**/*
+.angular/
+.idea/
+*.tgz

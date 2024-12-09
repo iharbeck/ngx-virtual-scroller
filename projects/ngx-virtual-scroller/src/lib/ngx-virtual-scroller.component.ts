@@ -167,7 +167,8 @@ export interface IViewport extends IPageInfo {
         :host.horizontal .total-padding {
             height: 100%;
         }
-    `]
+    `],
+    standalone: false
 })
 export class VirtualScrollerComponent implements OnInit, OnChanges, OnDestroy {
     public viewPortItems: any[];

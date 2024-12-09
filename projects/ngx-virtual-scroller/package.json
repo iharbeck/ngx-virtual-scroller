@@ -1,6 +1,6 @@
 {
   "name": "@iharbeck/ngx-virtual-scroller",
-  "version": "18.0.1",
+  "version": "19.0.1",
   "peerDependencies": {
     "@tweenjs/tween.js": "^25.0.0"
   },
@@ -20,7 +20,8 @@
     "angular 15",
     "angular 16",
     "angular 17",
-    "angular 18"
+    "angular 18",
+    "angular 19"
   ],
   "contributors": [
     {

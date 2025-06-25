@@ -95,10 +95,12 @@ export interface IViewport extends IPageInfo {
     selector: 'virtual-scroller,[virtualScroller]',
     exportAs: 'virtualScroller',
     template: `
+        <ng-content select="[tab-header]"></ng-content>
         <div class="total-padding" #invisiblePadding></div>
         <div class="scrollable-content" #content>
             <ng-content></ng-content>
         </div>
+        <ng-content select="[tab-footer]"></ng-content>
     `,
     host: {
         '[class.horizontal]': 'horizontal',
@@ -398,9 +400,6 @@ export class VirtualScrollerComponent implements OnInit, OnChanges, OnDestroy {
 
     @ViewChild('invisiblePadding', {read: ElementRef, static: true})
     protected invisiblePaddingElementRef: ElementRef;
-
-    @ContentChild('header', {read: ElementRef, static: false})
-    protected headerElementRef: ElementRef;
 
     @ContentChild('container', {read: ElementRef, static: false})
     protected containerElementRef: ElementRef;
@@ -815,14 +814,6 @@ export class VirtualScrollerComponent implements OnInit, OnChanges, OnDestroy {
                     }
                 }
 
-                if (this.headerElementRef) {
-                    let scrollPosition = this.getScrollElement()[this._scrollType];
-                    let containerOffset = this.getElementsOffset();
-                    let offset = Math.max(scrollPosition - viewport.padding - containerOffset + this.headerElementRef.nativeElement.clientHeight, 0);
-                    this.renderer.setStyle(this.headerElementRef.nativeElement, 'transform', `${this._translateDir}(${offset}px)`);
-                    this.renderer.setStyle(this.headerElementRef.nativeElement, 'webkitTransform', `${this._translateDir}(${offset}px)`);
-                }
-
                 const changeEventArg: IPageInfo = (startChanged || endChanged) ? {
                     startIndex: viewport.startIndex,
                     endIndex: viewport.endIndex,
@@ -1186,10 +1177,6 @@ export class VirtualScrollerComponent implements OnInit, OnChanges, OnDestroy {
             scrollLength += Math.round(numUnknownChildSizes * defaultScrollLengthPerWrapGroup);
         } else {
             scrollLength = numberOfWrapGroups * defaultScrollLengthPerWrapGroup;
-        }
-
-        if (this.headerElementRef) {
-            scrollLength += this.headerElementRef.nativeElement.clientHeight;
         }
 
         let viewportLength = this.horizontal ? viewportWidth : viewportHeight;

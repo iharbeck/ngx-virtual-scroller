@@ -92,6 +92,7 @@ export interface IViewport extends IPageInfo {
 
 
 @Component({
+    standalone: false,
     selector: 'virtual-scroller,[virtualScroller]',
     exportAs: 'virtualScroller',
     template: `
@@ -168,7 +169,6 @@ export interface IViewport extends IPageInfo {
             height: 100%;
         }
     `],
-    standalone: false
 })
 export class VirtualScrollerComponent implements OnInit, OnChanges, OnDestroy {
     public viewPortItems: any[];
@@ -1276,7 +1276,7 @@ export class VirtualScrollerComponent implements OnInit, OnChanges, OnDestroy {
                     break;
                 }
             }
-            
+
             arrayStartIndex = i * dimensions.itemsPerWrapGroup;
             arrayEndIndex = j * dimensions.itemsPerWrapGroup;
         } else {

@@ -15,7 +15,7 @@ export interface ListItem {
 @Component({
     selector: 'list-item',
     standalone: false,
-    template: `,
+    template: `
     
         <div class="avatar">{{item.index}}</div>
         <div class="item-content">

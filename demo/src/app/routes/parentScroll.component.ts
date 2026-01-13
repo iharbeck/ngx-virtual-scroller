@@ -4,9 +4,7 @@ import { BaseList } from '../lists/base-list';
 @Component({
   selector: 'parent-scroll',
   standalone: false,
-  template: `,
-  
-
+  template: `
 <h1>Window/Parent Scroll</h1>
 <button (click)="sortByName()">Sort By Name</button>
 <button (click)="sortByIndex()">Sort By Index</button>

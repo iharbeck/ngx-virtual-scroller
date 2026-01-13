@@ -4,7 +4,9 @@ import { BaseList } from './base-list';
 
 @Component({
   selector: 'vertical-list',
-  template: `
+  standalone: false,
+  template: `,
+  
     <button (click)="sortByName()">Sort By Name</button>
     <button (click)="sortByIndex()">Sort By Index</button>
     <button (click)="prependItems()">Prepend 10 Items</button>

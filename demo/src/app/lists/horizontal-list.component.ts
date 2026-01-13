@@ -4,7 +4,9 @@ import { BaseList } from './base-list';
 
 @Component({
   selector: 'horizontal-list',
+  standalone: false,
   template: `
+
     <style>
       ::ng-deep list-item.inline {
         width: 400px;
@@ -36,7 +38,7 @@ import { BaseList } from './base-list';
       [enableUnequalChildrenSizes]="randomSize"
       [horizontal]="true"
       [items]="filteredList" [RTL] = "rtl">
-      
+
       <list-item [randomWidth]="randomSize" *ngFor="let item of scroll.viewPortItems" class="inline" [item]="item"> </list-item>
     </virtual-scroller>
   `,

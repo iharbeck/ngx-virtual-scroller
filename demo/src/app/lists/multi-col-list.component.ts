@@ -4,7 +4,9 @@ import { BaseList } from './base-list';
 
 @Component({
   selector: 'multi-col-list',
-  template: `
+  standalone: false,
+  template: `,
+  
 
     <button (click)="sortByName()">Sort By Name</button>
     <button (click)="sortByIndex()">Sort By Index</button>

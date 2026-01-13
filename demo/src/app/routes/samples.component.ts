@@ -4,8 +4,9 @@ import { BaseList } from '../lists/base-list';
 
 @Component({
   selector: 'samples',
-  templateUrl: 'samples.component.html'
-})
+  templateUrl: 'samples.component.html',
+  standalone: false,
+  })
 export class SamplesComponent {
 
   public items: ListItem[] = [];

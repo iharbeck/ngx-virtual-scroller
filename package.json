@@ -22,14 +22,14 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^19.2.17",
-    "@angular/common": "^19.2.17",
-    "@angular/compiler": "^19.2.17",
-    "@angular/core": "^19.2.17",
-    "@angular/forms": "^19.2.17",
-    "@angular/platform-browser": "^19.2.17",
-    "@angular/platform-browser-dynamic": "^19.2.17",
-    "@angular/router": "^19.2.17",
+    "@angular/animations": "^19.0.3",
+    "@angular/common": "^19.0.3",
+    "@angular/compiler": "^19.0.3",
+    "@angular/core": "^19.0.3",
+    "@angular/forms": "^19.0.3",
+    "@angular/platform-browser": "^19.0.3",
+    "@angular/platform-browser-dynamic": "^19.0.3",
+    "@angular/router": "^19.0.3",
     "g": "^2.0.1",
     "npm-check-updates": "^16.14.12",
     "rxjs": "^7.8.1",
@@ -37,9 +37,9 @@
     "zone.js": "^0.15.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^19.2.19",
-    "@angular/cli": "^19.2.19",
-    "@angular/compiler-cli": "^19.2.17",
+    "@angular-devkit/build-angular": "^19.0.4",
+    "@angular/cli": "^19.0.4",
+    "@angular/compiler-cli": "^19.0.3",
     "@tweenjs/tween.js": "^23.1.1",
     "@types/jasmine": "^5.1.4",
     "@types/node": "^20.11.6",
@@ -51,6 +51,6 @@
     "karma-jasmine": "^5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "ng-packagr": "^19.0.1",
-    "typescript": "^5.6.3"
+    "typescript": "^5.5.4"
   }
 }

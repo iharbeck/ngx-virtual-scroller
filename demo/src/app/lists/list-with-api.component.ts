@@ -7,7 +7,7 @@ import {IPageInfo} from "@iharbeck/ngx-virtual-scroller";
 @Component({
   selector: 'list-with-api',
   standalone: false,
-  template: `,
+  template: `
   
     <label>Add items at Top <input type="checkbox" (change)="shouldPrependItems = !shouldPrependItems" /></label>
     <button (click)="sortByName()">Sort By Name</button>

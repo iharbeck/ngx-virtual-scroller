@@ -4,9 +4,11 @@ import { BaseList } from './base-list';
 
 @Component({
   selector: 'table-list',
+  standalone: false,
   template: `
     <button (click)="sortByName()">Sort By Name</button>
     <button (click)="sortByIndex()">Sort By Index</button>
+    <button (click)="prependItems()">Prepend 10 Items</button>
     <button (click)="prependItems()">Prepend 10 Items</button>
     <button (click)="appendItems()">Append 10 Items</button>
     <button (click)="reduceListToEmpty()">Reduce to 0 Items</button>

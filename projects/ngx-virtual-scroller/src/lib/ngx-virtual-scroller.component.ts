@@ -875,7 +875,7 @@ export class VirtualScrollerComponent implements OnInit, OnChanges, OnDestroy {
     }
 
     protected getScrollElement(): HTMLElement {
-        return this.parentScroll instanceof Window ? document.scrollingElement || document.documentElement || document.body : this.parentScroll || this.element.nativeElement;
+        return this.parentScroll instanceof Window ? (document.scrollingElement as HTMLElement) || document.documentElement || document.body : (this.parentScroll as HTMLElement) || this.element.nativeElement;
     }
 
     protected addScrollEventHandlers(): void {
@@ -1263,7 +1263,7 @@ export class VirtualScrollerComponent implements OnInit, OnChanges, OnDestroy {
                     break;
                 }
             }
-            
+
             arrayStartIndex = i * dimensions.itemsPerWrapGroup;
             arrayEndIndex = j * dimensions.itemsPerWrapGroup;
         } else {
@@ -1344,6 +1344,5 @@ export class VirtualScrollerComponent implements OnInit, OnChanges, OnDestroy {
         };
     }
 }
-
 
 

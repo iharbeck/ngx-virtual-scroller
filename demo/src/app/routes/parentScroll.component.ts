@@ -3,7 +3,9 @@ import { BaseList } from '../lists/base-list';
 
 @Component({
   selector: 'parent-scroll',
-  template: `
+  standalone: false,
+  template: `,
+  
 
 <h1>Window/Parent Scroll</h1>
 <button (click)="sortByName()">Sort By Name</button>

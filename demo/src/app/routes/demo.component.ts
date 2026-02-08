@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'demo',
+  standalone: false,
   template: `
+  
         
 <div class="posts" id="demo">
   <h1 class="content-subhead">Demo</h1>

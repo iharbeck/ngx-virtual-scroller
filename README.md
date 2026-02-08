@@ -299,30 +299,15 @@ export class ListWithApiComponent implements OnChanges {
 }
 ```
 
-## With HTML Table
+## Sticky header and footer
 
-*Note* - The `#header` angular selector will make the `<thead>` element fixed to top. If you want the header to scroll out of view don't add the `#header` angular element ref.
+*Note* - The `tab-header` angular selector will make the element fixed to top and the `tab-footer` angular selector will make the element fixed to bottom.
 
 ```html
 <virtual-scroller #scroll [items]="myItems">
-    <table>
-        <thead #header>
-            <th>Index</th>
-            <th>Name</th>
-            <th>Gender</th>
-            <th>Age</th>
-            <th>Address</th>
-        </thead>
-        <tbody #container>
-            <tr *ngFor="let item of scroll.viewPortItems">
-                <td>{{item.index}}</td>
-                <td>{{item.name}}</td>
-                <td>{{item.gender}}</td>
-                <td>{{item.age}}</td>
-                <td>{{item.address}}</td>
-            </tr>
-        </tbody>
-    </table>
+    <my-custom-header-component tab-header> </my-custom-header-component>
+    <my-custom-component *ngFor="let item of scroll.viewPortItems"> </my-custom-component>
+    <my-custom-footer-component tab-footer> </my-custom-footer-component>
 </virtual-scroller>
 ```
 

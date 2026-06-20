@@ -41,7 +41,7 @@ import {IPageInfo} from "@iharbeck/ngx-virtual-scroller";
 })
 export class ListWithApiComponent extends BaseList {
   public shouldPrependItems = false;
-  public timer;
+  public timer: ReturnType<typeof setTimeout>;
   public loading: boolean = false;
 
   public ngOnChanges() {

@@ -73,7 +73,11 @@ export class ListItemComponent {
   }
 
   private stringToHash(text: string): number {
-    return [].reduce.call(text, (accumulator, character) => (accumulator << 5) - accumulator + character.charCodeAt(0), 0) ^ ListItemComponent.Seed;
+    let hash = 0;
+    for (const character of text) {
+      hash = (hash << 5) - hash + character.charCodeAt(0);
+    }
+    return hash ^ ListItemComponent.Seed;
   }
 }
 ListItemComponent.ResetSeed();

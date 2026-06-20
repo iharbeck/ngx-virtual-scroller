@@ -1,7 +1,6 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
@@ -10,13 +9,23 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "noImplicitAny": false,
+    "strictNullChecks": false,
+    "strictPropertyInitialization": false,
     "target": "ES2022",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
     "lib": [
-      "es2018",
+      "ES2022",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@iharbeck/ngx-virtual-scroller": [
+        "../dist/ngx-virtual-scroller"
+      ]
+    }
+  },
+  "angularCompilerOptions": {
+    "strictTemplates": false
   }
 }
